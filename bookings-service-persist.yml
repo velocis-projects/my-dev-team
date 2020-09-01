@@ -122,60 +122,60 @@ serviceMaps:
       
        - jsonPath: $.Booking.*.bkPaymentDate
       
-       - jsonPath: $.Booking.*.bk_payment_receipt_number
+       - jsonPath: $.Booking.*.bkPaymentReceiptNumber
       
-       - jsonPath: $.Booking.*.bk_payment_status
+       - jsonPath: $.Booking.*.bkPaymentStatus
       
-       - jsonPath: $.Booking.*.bk_plot_sketch
+       - jsonPath: $.Booking.*.bkPlotSketch
       
-       - jsonPath: $.Booking.*.bk_property_owner_name
+       - jsonPath: $.Booking.*.bkPropertyOwnerName
       
-       - jsonPath: $.Booking.*.bk_refund_amount
+       - jsonPath: $.Booking.*.bkRefundAmount
       
-       - jsonPath: $.Booking.*.bk_rent
+       - jsonPath: $.Booking.*.bkRent
       
-       - jsonPath: $.Booking.*.bk_requirement_area
+       - jsonPath: $.Booking.*.bkRequirementArea
       
-       - jsonPath: $.Booking.*.bk_residence_proof
+       - jsonPath: $.Booking.*.bkResidenceProof
       
-       - jsonPath: $.Booking.*.bk_residential_or_commercial
+       - jsonPath: $.Booking.*.bkResidentialOrCommercial
       
-       - jsonPath: $.Booking.*.bk_sector
+       - jsonPath: $.Booking.*.bkSector
       
-       - jsonPath: $.Booking.*.bk_starting_date
+       - jsonPath: $.Booking.*.bkStartingDate
       
-       - jsonPath: $.Booking.*.bk_status
+       - jsonPath: $.Booking.*.bkStatus
       
-       - jsonPath: $.Booking.*.bk_status_update_request
+       - jsonPath: $.Booking.*.bkStatusUpdateRequest
       
-       - jsonPath: $.Booking.*.bk_surcharge_rent
+       - jsonPath: $.Booking.*.bkSurchargeRent
       
-       - jsonPath: $.Booking.*.bk_time
+       - jsonPath: $.Booking.*.bkTime
       
-       - jsonPath: $.Booking.*.bk_to_date
+       - jsonPath: $.Booking.*.bkToDate
       
-       - jsonPath: $.Booking.*.bk_type
+       - jsonPath: $.Booking.*.bkType
       
-       - jsonPath: $.Booking.*.bk_update_status_option
+       - jsonPath: $.Booking.*.bkUpdateStatusOption
       
-       - jsonPath: $.Booking.*.bk_utgst
+       - jsonPath: $.Booking.*.bkUtgst
       
-       - jsonPath: $.Booking.*.bk_vehicle_number
+       - jsonPath: $.Booking.*.bkVehicleNumber
       
-       - jsonPath: $.Booking.*.bk_venue
+       - jsonPath: $.Booking.*.bkVenue
       
-       - jsonPath: $.Booking.*.bk_vill_city
+       - jsonPath: $.Booking.*.bkVillCity
       
-       - jsonPath: $.Booking.*.bk_village
+       - jsonPath: $.Booking.*.bkVillage
       
-       - jsonPath: $.Booking.*.bk_wf_status
+       - jsonPath: $.Booking.*.bkWfStatus
       
-       - jsonPath: $.Booking.*.business_service
+       - jsonPath: $.Booking.*.businessService
       
-       - jsonPath: $.Booking.*.tenant_id
+       - jsonPath: $.Booking.*.tenantId
       
        - jsonPath: $.Booking.*.uuid
       
-       - jsonPath: $.Booking.*.approver_name
+       - jsonPath: $.Booking.*.bkApproverName
       
-       - jsonPath: $.Booking.*.financial_year
+       - jsonPath: $.Booking.*.financialYear
