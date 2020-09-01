@@ -194,6 +194,8 @@ serviceMaps:
           - jsonPath: $.Booking.*.bookingsRemarks.*.bk_remarks
 
           - jsonPath: $.Booking[*][?({bk_application_number} in @.bookingsRemarks[*].bk_remarks_id)].bk_remarks_id
+          
+          - jsonPath: $.Booking[*][?({application_number} in @.bookingsRemarks[*].bk_remarks_id)].bk_remarks_id
 
    
    
