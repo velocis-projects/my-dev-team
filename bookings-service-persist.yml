@@ -12,115 +12,115 @@ serviceMaps:
       basePath: Booking.*
       jsonMaps:
 
-       - jsonPath: $.Booking.*.bk_application_number
+       - jsonPath: $.Booking.*.bkApplicationNumber
 
-       - jsonPath: $.Booking.*.bk_account_type
+       - jsonPath: $.Booking.*.bkAccountType
 
-       - jsonPath: $.Booking.*.bk_action
+       - jsonPath: $.Booking.*.bkAction
 
-       - jsonPath: $.Booking.*.bk_actual_delivery_time
+       - jsonPath: $.Booking.*.bkActualDeliveryTime
 
-       - jsonPath: $.Booking.*.bk_add_special_request_details
+       - jsonPath: $.Booking.*.bkAddSpecialRequestDetails
        
-       - jsonPath: $.Booking.*.bk_address
+       - jsonPath: $.Booking.*.bkAddress
        
-       - jsonPath: $.Booking.*.bk_amount
+       - jsonPath: $.Booking.*.bkAmount
        
-       - jsonPath: $.Booking.*. bk_applicant_contact
+       - jsonPath: $.Booking.*. bkApplicantContact
        
-       - jsonPath: $.Booking.*.bk_applicant_name
+       - jsonPath: $.Booking.*.bkApplicantName
        
-       - jsonPath: $.Booking.*.bk_application_status
+       - jsonPath: $.Booking.*.bkApplicationStatus
        
-       - jsonPath: $.Booking.*.bk_approved_by
+       - jsonPath: $.Booking.*.bkApprovedBy
        
-       - jsonPath: $.Booking.*.bk_area_required
+       - jsonPath: $.Booking.*.bkAreaRequired
        
-       - jsonPath: $.Booking.*.bk_bank_account_number
+       - jsonPath: $.Booking.*.bkBankAccountNumber
        
-       - jsonPath: $.Booking.*.bk_bank_name
+       - jsonPath: $.Booking.*.bkBankName
       
-       - jsonPath: $.Booking.*.bk_booking_duration
+       - jsonPath: $.Booking.*.bkBookingDuration
       
-       - jsonPath: $.Booking.*.bk_booking_purpose
+       - jsonPath: $.Booking.*.bkBookingPurpose
       
-       - jsonPath: $.Booking.*.bk_booking_reference_number
+       - jsonPath: $.Booking.*.bkBookingReferenceNumber
       
-       - jsonPath: $.Booking.*.bk_booking_time
+       - jsonPath: $.Booking.*.bkBookingTime
       
-       - jsonPath: $.Booking.*.bk_booking_type
+       - jsonPath: $.Booking.*.bkBookingType
       
-       - jsonPath: $.Booking.*.bk_booking_venue
+       - jsonPath: $.Booking.*.bkBookingVenue
       
-       - jsonPath: $.Booking.*.bk_category
+       - jsonPath: $.Booking.*.bkCategory
       
-       - jsonPath: $.Booking.*.bk_cgst
+       - jsonPath: $.Booking.*.bkCgst
       
-       - jsonPath: $.Booking.*.bk_cleansing_charges
+       - jsonPath: $.Booking.*.bkCleansingCharges
       
-       - jsonPath: $.Booking.*.bk_complete_address
+       - jsonPath: $.Booking.*.bkCompleteAddress
       
-       - jsonPath: $.Booking.*.bk_construction_type
+       - jsonPath: $.Booking.*.bkConstructionType
       
-       - jsonPath: $.Booking.*.bk_contact_no
+       - jsonPath: $.Booking.*.bkContactNo
       
-       - jsonPath: $.Booking.*.bk_created_by
+       - jsonPath: $.Booking.*.bkCreatedBy
       
-       - jsonPath: $.Booking.*.bk_current_charges
+       - jsonPath: $.Booking.*.bkCurrentCharges
       
-       - jsonPath: $.Booking.*.bk_customer_gst_no
+       - jsonPath: $.Booking.*.bkCustomerGstNo
       
-       - jsonPath: $.Booking.*.bk_date
+       - jsonPath: $.Booking.*.bkDate
       
-       - jsonPath: $.Booking.*.bk_date_created
+       - jsonPath: $.Booking.*.bkDateCreated
       
-       - jsonPath: $.Booking.*.bk_dimension
+       - jsonPath: $.Booking.*.bkDimension
       
-       - jsonPath: $.Booking.*.bk_document_uploaded_url
+       - jsonPath: $.Booking.*.bkDocumentUploadedUrl
       
-       - jsonPath: $.Booking.*.bk_driver_name
+       - jsonPath: $.Booking.*.bkDriverName
       
-       - jsonPath: $.Booking.*.bk_duration
+       - jsonPath: $.Booking.*.bkDuration
       
-       - jsonPath: $.Booking.*.bk_email
+       - jsonPath: $.Booking.*.bkEmail
       
-       - jsonPath: $.Booking.*.bk_ending_date
+       - jsonPath: $.Booking.*.bkEndingDate
       
-       - jsonPath: $.Booking.*.bk_estimated_delivery_time
+       - jsonPath: $.Booking.*.bkEstimatedDeliveryTime
       
-       - jsonPath: $.Booking.*.bk_facilitation_charges
+       - jsonPath: $.Booking.*.bkFacilitationCharges
       
-       - jsonPath: $.Booking.*.bk_father_name
+       - jsonPath: $.Booking.*.bkFatherName
       
-       - jsonPath: $.Booking.*.bk_from_date
+       - jsonPath: $.Booking.*.bkFromDate
       
-       - jsonPath: $.Booking.*.bk_house_no
+       - jsonPath: $.Booking.*.bkHouseNo
       
-       - jsonPath: $.Booking.*.bk_id_proof
+       - jsonPath: $.Booking.*.bkIdProof
       
-       - jsonPath: $.Booking.*.bk_ifsc_code
+       - jsonPath: $.Booking.*.bkIfscCode
       
-       - jsonPath: $.Booking.*.bk_landmark
+       - jsonPath: $.Booking.*.bkLandmark
       
-       - jsonPath: $.Booking.*.bk_location
+       - jsonPath: $.Booking.*.bkLocation
       
-       - jsonPath: $.Booking.*.bk_location_change_amount
+       - jsonPath: $.Booking.*.bkLocationChangeAmount
       
-       - jsonPath: $.Booking.*.bk_location_pictures
+       - jsonPath: $.Booking.*.bkLocationPictures
       
-       - jsonPath: $.Booking.*.bk_material_storage_area
+       - jsonPath: $.Booking.*.bkMaterialStorageArea
       
-       - jsonPath: $.Booking.*.bk_mobile_number
+       - jsonPath: $.Booking.*.bkMobileNumber
       
-       - jsonPath: $.Booking.*.bk_module_type
+       - jsonPath: $.Booking.*.bkModuleType
       
-       - jsonPath: $.Booking.*.bk_normal_water_failure_request
+       - jsonPath: $.Booking.*.bkNormalWaterFailureRequest
       
-       - jsonPath: $.Booking.*.bk_open_space_location
+       - jsonPath: $.Booking.*.bkOpenSpaceLocation
       
-       - jsonPath: $.Booking.*.bk_park_or_community_center
+       - jsonPath: $.Booking.*.bkParkOrCommunityCenter
       
-       - jsonPath: $.Booking.*.bk_payment_date
+       - jsonPath: $.Booking.*.bkPaymentDate
       
        - jsonPath: $.Booking.*.bk_payment_receipt_number
       
