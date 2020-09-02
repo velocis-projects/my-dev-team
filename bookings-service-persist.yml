@@ -183,7 +183,7 @@ serviceMaps:
     
     
     
-    - query: INSERT INTO public.tl_bookings_remarks (bk_remarks_id, bk_created_by, bk_created_on, bk_remarks, bk_application_number) VALUES(?, ?, ?::date, ?, ?);
+    - query: INSERT INTO public.tl_bookings_remarks (bk_remarks_id, bk_created_by, bk_created_on, bk_remarks, bk_application_number, application_number) VALUES(?, ?, ?::date, ?, ?, ?);
       basePath: Booking.*.bookingsRemarks.*
       jsonMaps:
        - jsonPath: $.Booking.*.bookingsRemarks.*.bkRemarksId
@@ -194,4 +194,6 @@ serviceMaps:
 
        - jsonPath: $.Booking.*.bookingsRemarks.*.bkRemarks
 
+       - jsonPath: $.Booking[*][?({bkApplicationNumber} in @.bookingsRemarks[*].bkRemarksId)].bkRemarksId
+       
        - jsonPath: $.Booking[*][?({bkApplicationNumber} in @.bookingsRemarks[*].bkRemarksId)].bkRemarksId
