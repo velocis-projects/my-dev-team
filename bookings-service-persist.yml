@@ -179,20 +179,19 @@ serviceMaps:
        - jsonPath: $.Booking.*.bkApproverName
       
        - jsonPath: $.Booking.*.financialYear
-       
-       
-       
-       
-       - query: INSERT INTO public.tl_bookings_remarks (bk_remarks_id,bk_created_by, bk_created_on, bk_remarks, bk_application_number) VALUES(?, ?, ?::date, ?, ?);
+    
+    
+    
+    
+    - query: INSERT INTO public.tl_bookings_remarks (bk_remarks_id,bk_created_by, bk_created_on, bk_remarks, bk_application_number) VALUES(?, ?, ?::date, ?, ?);
+      basePath: Booking.*.bookingsRemarks.*
+      jsonMaps:
+       - jsonPath: $.Booking.*.bookingsRemarks.*.bkRemarksId
 
-         basePath: Booking.*.bookingsRemarks.*
-         jsonMaps:
-          - jsonPath: $.Booking.*.bookingsRemarks.*.bkRemarksId
+       - jsonPath: $.Booking.*.bookingsRemarks.*.bkCreatedBy
 
-          - jsonPath: $.Booking.*.bookingsRemarks.*.bkCreatedBy
+       - jsonPath: $.Booking.*.bookingsRemarks.*.bkCreatedOn
 
-          - jsonPath: $.Booking.*.bookingsRemarks.*.bkCreatedOn
+       - jsonPath: $.Booking.*.bookingsRemarks.*.bkRemarks
 
-          - jsonPath: $.Booking.*.bookingsRemarks.*.bkRemarks
-
-          - jsonPath: $.Booking[*][?({bkApplicationNumber} in @.bookingsRemarks[*].bkRemarksId)].bkRemarksId
+       - jsonPath: $.Booking[*][?({bkApplicationNumber} in @.bookingsRemarks[*].bkRemarksId)].bkRemarksId
