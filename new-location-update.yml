@@ -2,17 +2,16 @@ serviceMaps:
  serviceName: bookings
  mappings:
  - version: 1.0
+   name: bookings
    description: Persists the new location details into db
-   fromTopic: save-new-location-details
+   fromTopic: update-new-location-details
    isTransaction: true
    queryMaps:
-
-       - query: INSERT INTO public.tt_osujm_new_location (application_number, "action", applicant_address, applicant_name, application_status, area_requirement, business_service, contact, date_created, id_proof, landmark, locality_address, "location", mail_address, sector, tenant_id, uuid, remarks) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?::date, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+       
+       - query: UPDATE public.tt_osujm_new_location SET "action"=?, applicant_address=?, applicant_name=?, application_status=?, area_requirement=?, business_service=?, contact=?, date_created=?::date, id_proof=?, landmark=?, locality_address=?, "location"=?, mail_address=?, sector=?, tenant_id=?, uuid=?, remarks=? WHERE application_number=?;
          basePath: NewLocationDetails.*
          jsonMaps:
 
-             - jsonPath: $.NewLocationDetails.*.bkApplicationNumber
-             
              - jsonPath: $.NewLocationDetails.*.action
              
              - jsonPath: $.NewLocationDetails.*.applicantAddress
@@ -46,3 +45,6 @@ serviceMaps:
              - jsonPath: $.NewLocationDetails.*.uuid
              
              - jsonPath: $.NewLocationDetails.*.remarks
+             
+             - jsonPath: $.NewLocationDetails.*.applicationNumber
+             
