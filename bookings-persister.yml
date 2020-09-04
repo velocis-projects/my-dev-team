@@ -183,9 +183,7 @@ serviceMaps:
           
           
           
-serviceMaps:
- serviceName: bookings
- mappings:
+
  - version: 1.0
    description: Persists the booking details into db
    fromTopic: update-bookings-details
@@ -368,9 +366,7 @@ serviceMaps:
            
            
            
-serviceMaps:
- serviceName: bookings
- mappings:
+
  - version: 1.0
    description: Persists the new location details into db
    fromTopic: save-new-location-details
@@ -418,9 +414,7 @@ serviceMaps:
           
           
           
-serviceMaps:
- serviceName: bookings
- mappings:
+
  - version: 1.0
    name: bookings
    description: Persists the new location details into db
