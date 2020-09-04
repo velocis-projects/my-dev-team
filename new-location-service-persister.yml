@@ -10,7 +10,7 @@ serviceMaps:
        - query: INSERT INTO public.tt_osujm_new_location (application_number, "action", applicant_address, applicant_name, application_status, area_requirement, business_service, contact, date_created, id_proof, landmark, locality_address, "location", mail_address, sector, tenant_id, uuid, remarks) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?::date, ?, ?, ?, ?, ?, ?, ?, ?, ?);
          basePath: NewLocationDetails.*
          jsonMaps:
-          - jsonPath: $.NewLocationDetails.*.bkApplicationNumber
+          - jsonPath: $.NewLocationDetails.*.applicationNumber
              
           - jsonPath: $.NewLocationDetails.*.action
              
