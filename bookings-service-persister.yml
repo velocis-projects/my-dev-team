@@ -191,4 +191,4 @@ serviceMaps:
 
           - jsonPath: $.Booking.timeslots.*.slot
 
-          - jsonPath: $.Booking[*][?({bkApplicationNumber} in @.timeslots[*].id)].id
+          - jsonPath: $.Booking.timeslots.*.applicationNumber
