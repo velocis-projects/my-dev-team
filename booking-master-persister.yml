@@ -51,26 +51,26 @@ serviceMaps:
    queryMaps:
 
        - query: INSERT INTO public.tm_osbm_fee (id, amount, construction_type, duration_in_months, residential_commercial, storage, village_city, created_date, last_modified_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?::date, ?::date);
-         basePath: FeeDetails.*
+         basePath: OsbmFeeDetails.*
          jsonMaps:
          
-          - jsonPath: $.FeeDetails.*.id 
+          - jsonPath: $.OsbmFeeDetails.*.id 
              
-          - jsonPath: $.FeeDetails.*.amount
+          - jsonPath: $.OsbmFeeDetails.*.amount
              
-          - jsonPath: $.FeeDetails.*.construction_type
+          - jsonPath: $.OsbmFeeDetails.*.constructionType
              
-          - jsonPath: $.FeeDetails.*.duration_in_months
+          - jsonPath: $.OsbmFeeDetails.*.durationInMonths
              
-          - jsonPath: $.FeeDetails.*.residential_commercial
+          - jsonPath: $.OsbmFeeDetails.*.residentialCommercial
              
-          - jsonPath: $.FeeDetails.*.storage
+          - jsonPath: $.OsbmFeeDetails.*.storage
              
-          - jsonPath: $.FeeDetails.*.village_city
+          - jsonPath: $.OsbmFeeDetails.*.villageCity
           
-          - jsonPath: $.FeeDetails.*.createdDate
+          - jsonPath: $.OsbmFeeDetails.*.createdDate
           
-          - jsonPath: $.FeeDetails.*.lastModifiedDate
+          - jsonPath: $.OsbmFeeDetails.*.lastModifiedDate
              
           
           
@@ -84,26 +84,26 @@ serviceMaps:
    queryMaps:
        
        - query: UPDATE public.tm_osbm_fee SET amount=?, construction_type=?, duration_in_months=?, residential_commercial=?, storage=?, village_city=?, created_date=?::date, last_modified_date=?::date WHERE id=?;
-         basePath: FeeDetails.*
+         basePath: OsbmFeeDetails.*
          jsonMaps:
 
-          - jsonPath: $.FeeDetails.*.id 
+          - jsonPath: $.OsbmFeeDetails.*.id 
              
-          - jsonPath: $.FeeDetails.*.amount
+          - jsonPath: $.OsbmFeeDetails.*.amount
              
-          - jsonPath: $.FeeDetails.*.construction_type
+          - jsonPath: $.OsbmFeeDetails.*.constructionType
              
-          - jsonPath: $.FeeDetails.*.duration_in_months
+          - jsonPath: $.OsbmFeeDetails.*.durationInMonths
              
-          - jsonPath: $.FeeDetails.*.residential_commercial
+          - jsonPath: $.OsbmFeeDetails.*.residentialCommercial
              
-          - jsonPath: $.FeeDetails.*.storage
+          - jsonPath: $.OsbmFeeDetails.*.storage
              
-          - jsonPath: $.FeeDetails.*.village_city
+          - jsonPath: $.OsbmFeeDetails.*.villageCity
           
-          - jsonPath: $.FeeDetails.*.createdDate
+          - jsonPath: $.OsbmFeeDetails.*.createdDate
           
-          - jsonPath: $.FeeDetails.*.lastModifiedDate
+          - jsonPath: $.OsbmFeeDetails.*.lastModifiedDate
           
           
           
@@ -116,24 +116,24 @@ serviceMaps:
    queryMaps:
 
        - query: INSERT INTO public.tm_osujm_fee (id, area_from, area_to, rate_per_sqr_feet_per_day, sector, slab, created_date, last_modified_date) VALUES(?, ?, ?, ?, ?, ?, ?::date, ?::date);
-         basePath: FeeDetails.*
+         basePath: OsujmFeeDetails.*
          jsonMaps:
          
-          - jsonPath: $.FeeDetails.*.id 
+          - jsonPath: $.OsujmFeeDetails.*.id 
              
-          - jsonPath: $.FeeDetails.*.area_from
+          - jsonPath: $.OsujmFeeDetails.*.areaFrom
              
-          - jsonPath: $.FeeDetails.*.area_to
+          - jsonPath: $.OsujmFeeDetails.*.areaTo
              
-          - jsonPath: $.FeeDetails.*.rate_per_sqr_feet_per_day
+          - jsonPath: $.OsujmFeeDetails.*.ratePerSqrFeetPerDay
              
-          - jsonPath: $.FeeDetails.*.sector
+          - jsonPath: $.OsujmFeeDetails.*.sector
              
-          - jsonPath: $.FeeDetails.*.slab
+          - jsonPath: $.OsujmFeeDetails.*.slab
           
-          - jsonPath: $.FeeDetails.*.createdDate
+          - jsonPath: $.OsujmFeeDetails.*.createdDate
           
-          - jsonPath: $.FeeDetails.*.lastModifiedDate
+          - jsonPath: $.OsujmFeeDetails.*.lastModifiedDate
              
              
           
@@ -148,20 +148,20 @@ serviceMaps:
    queryMaps:
        
        - query: UPDATE public.tm_osujm_fee SET area_from=?, area_to=?, rate_per_sqr_feet_per_day=?, sector=?, slab=?, created_date=?::date, last_modified_date=?::date WHERE id=?;
-         basePath: FeeDetails.*
+         basePath: OsujmFeeDetails.*
          jsonMaps:
              
-          - jsonPath: $.FeeDetails.*.area_from
+          - jsonPath: $.OsujmFeeDetails.*.areaFrom
              
-          - jsonPath: $.FeeDetails.*.area_to
+          - jsonPath: $.OsujmFeeDetails.*.areaTo
              
-          - jsonPath: $.FeeDetails.*.rate_per_sqr_feet_per_day
+          - jsonPath: $.OsujmFeeDetails.*.ratePerSqrFeetPerDay
              
-          - jsonPath: $.FeeDetails.*.sector
+          - jsonPath: $.OsujmFeeDetails.*.sector
              
-          - jsonPath: $.FeeDetails.*.slab      
+          - jsonPath: $.OsujmFeeDetails.*.slab      
 
-          - jsonPath: $.FeeDetails.*.createdDate
+          - jsonPath: $.OsujmFeeDetails.*.createdDate
           
-          - jsonPath: $.FeeDetails.*.lastModifiedDate
+          - jsonPath: $.OsujmFeeDetails.*.lastModifiedDate
                                                        
