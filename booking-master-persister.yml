@@ -7,7 +7,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
    
-       - query: INSERT INTO public.tm_osbm_approver(id, sector, uuid, created_date, last_modified_date) VALUES(?, ?, ?, ?::date, ?::date);
+       - query: INSERT INTO public.tm_osbm_approver(id, sector, uuid, created_date, last_modified_date) VALUES(?, ?, ?);
          basePath: ApproverDetails.*
          jsonMaps:
          
@@ -17,9 +17,7 @@ serviceMaps:
   
           - jsonPath: $.ApproverDetails.*.uuid
           
-          - jsonPath: $.ApproverDetails.*.createdDate
           
-          - jsonPath: $.ApproverDetails.*.lastModifiedDate
    
           
  - version: 1.0
@@ -28,7 +26,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:  
    
-       - query: UPDATE public.tm_osbm_approver SET sector=?, uuid=?, created_date=?::date, last_modified_date=?::date WHERE id=?; 
+       - query: UPDATE public.tm_osbm_approver SET sector=?, uuid=? WHERE id=?; 
          basePath: ApproverDetails.*
          jsonMaps:
   
@@ -36,9 +34,7 @@ serviceMaps:
   
           - jsonPath: $.ApproverDetails.*.uuid
           
-          - jsonPath: $.ApproverDetails.*.createdDate
-          
-          - jsonPath: $.ApproverDetails.*.lastModifiedDate
+         
            
            
            
