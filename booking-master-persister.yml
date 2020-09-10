@@ -28,7 +28,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:  
    
-       - query: UPDATE public.tt_bookings SET sector=?, uuid=?, created_date=?::date, last_modified_date=?::date WHERE id=?; 
+       - query: UPDATE public.tm_osbm_fee SET sector=?, uuid=?, created_date=?::date, last_modified_date=?::date WHERE id=?; 
          basePath: ApproverDetails.*
          jsonMaps:
   
