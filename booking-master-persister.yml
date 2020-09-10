@@ -28,11 +28,11 @@ serviceMaps:
    isTransaction: true
    queryMaps:  
    
-       - query: UPDATE public.tm_osbm_fee SET sector=?, uuid=?, created_date=?::date, last_modified_date=?::date WHERE id=?; 
+       - query: UPDATE public.tm_osbm_approver SET sector=?, uuid=?, created_date=?::date, last_modified_date=?::date WHERE id=?; 
          basePath: ApproverDetails.*
          jsonMaps:
   
-           - jsonPath: $.ApproverDetails.*.sector
+          - jsonPath: $.ApproverDetails.*.sector
   
           - jsonPath: $.ApproverDetails.*.uuid
           
@@ -53,6 +53,7 @@ serviceMaps:
        - query: INSERT INTO public.tm_osbm_fee (id, amount, construction_type, duration_in_months, residential_commercial, storage, village_city, created_date, last_modified_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?::date, ?::date);
          basePath: FeeDetails.*
          jsonMaps:
+         
           - jsonPath: $.FeeDetails.*.id 
              
           - jsonPath: $.FeeDetails.*.amount
@@ -117,6 +118,7 @@ serviceMaps:
        - query: INSERT INTO public.tm_osujm_fee (id, area_from, area_to, rate_per_sqr_feet_per_day, sector, slab, created_date, last_modified_date) VALUES(?, ?, ?, ?, ?, ?, ?::date, ?::date);
          basePath: FeeDetails.*
          jsonMaps:
+         
           - jsonPath: $.FeeDetails.*.id 
              
           - jsonPath: $.FeeDetails.*.area_from
