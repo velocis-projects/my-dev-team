@@ -7,7 +7,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
    
-       - query: INSERT INTO public.tm_osbm_approver(id, sector, uuid, role_code, created_date, last_modified_date) VALUES(?, ?, ?, ?::timestamp, ?::timestamp);
+       - query: INSERT INTO public.tm_osbm_approver(id, sector, uuid, role_code, created_date, last_modified_date) VALUES(?, ?, ?, ?, ?::timestamp, ?::timestamp);
          basePath: ApproverDetails.*
          jsonMaps:
          
