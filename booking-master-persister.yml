@@ -41,6 +41,8 @@ serviceMaps:
           - jsonPath: $.ApproverDetails.*.roleCode
           
           - jsonPath: $.ApproverDetails.*.lastModifiedDate
+          
+          - jsonPath: $.ApproverDetails.*.id
            
            
            
@@ -88,8 +90,6 @@ serviceMaps:
        - query: UPDATE public.tm_osbm_fee SET amount=?, construction_type=?, duration_in_months=?, residential_commercial=?, storage=?, village_city=?, last_modified_date=?::timestamp WHERE id=?;
          basePath: OsbmFeeDetails.*
          jsonMaps:
-
-          - jsonPath: $.OsbmFeeDetails.*.id 
              
           - jsonPath: $.OsbmFeeDetails.*.amount
              
@@ -104,6 +104,8 @@ serviceMaps:
           - jsonPath: $.OsbmFeeDetails.*.villageCity
           
           - jsonPath: $.OsbmFeeDetails.*.lastModifiedDate
+          
+          - jsonPath: $.OsbmFeeDetails.*.id 
           
           
           
@@ -162,4 +164,6 @@ serviceMaps:
           - jsonPath: $.OsujmFeeDetails.*.slab      
           
           - jsonPath: $.OsujmFeeDetails.*.lastModifiedDate
+          
+          - jsonPath: $.OsujmFeeDetails.*.id 
                                                        
