@@ -30,7 +30,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:  
    
-       - query: UPDATE public.tm_osbm_approver SET sector=?, uuid=?, role_code=?, created_date=?::timestamp, last_modified_date=?::timestamp WHERE id=?; 
+       - query: UPDATE public.tm_osbm_approver SET sector=?, uuid=?, role_code=?, last_modified_date=?::timestamp WHERE id=?; 
          basePath: ApproverDetails.*
          jsonMaps:
   
@@ -39,8 +39,6 @@ serviceMaps:
           - jsonPath: $.ApproverDetails.*.uuid
           
           - jsonPath: $.ApproverDetails.*.roleCode
-          
-          - jsonPath: $.ApproverDetails.*.createdDate
           
           - jsonPath: $.ApproverDetails.*.lastModifiedDate
            
@@ -87,7 +85,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: UPDATE public.tm_osbm_fee SET amount=?, construction_type=?, duration_in_months=?, residential_commercial=?, storage=?, village_city=?, created_date=?::timestamp, last_modified_date=?::timestamp WHERE id=?;
+       - query: UPDATE public.tm_osbm_fee SET amount=?, construction_type=?, duration_in_months=?, residential_commercial=?, storage=?, village_city=?, last_modified_date=?::timestamp WHERE id=?;
          basePath: OsbmFeeDetails.*
          jsonMaps:
 
@@ -104,8 +102,6 @@ serviceMaps:
           - jsonPath: $.OsbmFeeDetails.*.storage
              
           - jsonPath: $.OsbmFeeDetails.*.villageCity
-          
-          - jsonPath: $.OsbmFeeDetails.*.createdDate
           
           - jsonPath: $.OsbmFeeDetails.*.lastModifiedDate
           
@@ -151,7 +147,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: UPDATE public.tm_osujm_fee SET area_from=?, area_to=?, rate_per_sqr_feet_per_day=?, sector=?, slab=?, created_date=?::timestamp, last_modified_date=?::timestamp WHERE id=?;
+       - query: UPDATE public.tm_osujm_fee SET area_from=?, area_to=?, rate_per_sqr_feet_per_day=?, sector=?, slab=?, last_modified_date=?::timestamp WHERE id=?;
          basePath: OsujmFeeDetails.*
          jsonMaps:
              
@@ -164,8 +160,6 @@ serviceMaps:
           - jsonPath: $.OsujmFeeDetails.*.sector
              
           - jsonPath: $.OsujmFeeDetails.*.slab      
-
-          - jsonPath: $.OsujmFeeDetails.*.createdDate
           
           - jsonPath: $.OsujmFeeDetails.*.lastModifiedDate
                                                        
