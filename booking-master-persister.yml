@@ -167,3 +167,59 @@ serviceMaps:
           
           - jsonPath: $.OsujmFeeDetails.*.id 
                                                        
+                                                       
+                                                       
+                                                       
+                                                       
+ - version: 1.0
+   description: Persists the GFCP fee details into db
+   fromTopic: save-gfcp-fee-details
+   isTransaction: true
+   queryMaps:
+
+       - query: INSERT INTO public.tm_commercial_ground_fee (id, booking_venue, category, locality, rate_per_day, created_date, last_modified_date) VALUES(?, ?, ?, ?, ?, ?::timestamp, ?::timestamp);
+         basePath: GfcpFeeDetails.*
+         jsonMaps:
+         
+          - jsonPath: $.GfcpFeeDetails.*.id 
+             
+          - jsonPath: $.GfcpFeeDetails.*.bookingVenue
+             
+          - jsonPath: $.GfcpFeeDetails.*.category
+             
+          - jsonPath: $.GfcpFeeDetails.*.locality
+             
+          - jsonPath: $.GfcpFeeDetails.*.ratePerDay
+          
+          - jsonPath: $.GfcpFeeDetails.*.createdDate
+          
+          - jsonPath: $.GfcpFeeDetails.*.lastModifiedDate
+             
+             
+          
+          
+          
+
+ - version: 1.0
+   name: bookings
+   description: Persists the GFCP fee details into db
+   fromTopic: update-gfcp-fee-details
+   isTransaction: true
+   queryMaps:
+       
+       - query: UPDATE public.tm_commercial_ground_fee SET booking_venue=?, category=?, locality=?, rate_per_day=?, last_modified_date=?::timestamp WHERE id=?;
+         basePath: GfcpFeeDetails.*
+         jsonMaps:
+             
+          - jsonPath: $.GfcpFeeDetails.*.bookingVenue
+             
+          - jsonPath: $.GfcpFeeDetails.*.category
+             
+          - jsonPath: $.GfcpFeeDetails.*.locality
+             
+          - jsonPath: $.GfcpFeeDetails.*.ratePerDay      
+          
+          - jsonPath: $.OsujmFeeDetails.*.lastModifiedDate
+          
+          - jsonPath: $.OsujmFeeDetails.*.id 
+                                                                                                              
