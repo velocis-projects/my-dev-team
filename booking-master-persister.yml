@@ -3,7 +3,7 @@ serviceMaps:
  mappings:
  - version: 1.0
    description: Persists the approver details into db
-   fromTopic: save-approver-details
+   fromTopic: save-approver-details-topic
    isTransaction: true
    queryMaps:
    
@@ -26,7 +26,7 @@ serviceMaps:
           
  - version: 1.0
    description: Persists the booking details into db
-   fromTopic: update-approver-details
+   fromTopic: update-approver-details-topic
    isTransaction: true
    queryMaps:  
    
@@ -50,7 +50,7 @@ serviceMaps:
     
  - version: 1.0
    description: Persists the OSBM fee details into db
-   fromTopic: save-osbm-fee-details
+   fromTopic: save-osbm-fee-details-topic
    isTransaction: true
    queryMaps:
 
@@ -83,7 +83,7 @@ serviceMaps:
  - version: 1.0
    name: bookings
    description: Persists the OSBM fee details into db
-   fromTopic: update-osbm-fee-details
+   fromTopic: update-osbm-fee-details-topic
    isTransaction: true
    queryMaps:
        
@@ -113,7 +113,7 @@ serviceMaps:
           
  - version: 1.0
    description: Persists the OSUJM fee details into db
-   fromTopic: save-osujm-fee-details
+   fromTopic: save-osujm-fee-details-topic
    isTransaction: true
    queryMaps:
 
@@ -145,7 +145,7 @@ serviceMaps:
  - version: 1.0
    name: bookings
    description: Persists the OSUJM fee details into db
-   fromTopic: update-osujm-fee-details
+   fromTopic: update-osujm-fee-details-topic
    isTransaction: true
    queryMaps:
        
@@ -173,7 +173,7 @@ serviceMaps:
                                                        
  - version: 1.0
    description: Persists the GFCP fee details into db
-   fromTopic: save-gfcp-fee-details
+   fromTopic: save-gfcp-fee-details-topic
    isTransaction: true
    queryMaps:
 
@@ -203,7 +203,7 @@ serviceMaps:
  - version: 1.0
    name: bookings
    description: Persists the GFCP fee details into db
-   fromTopic: update-gfcp-fee-details
+   fromTopic: update-gfcp-fee-details-topic
    isTransaction: true
    queryMaps:
        
