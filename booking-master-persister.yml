@@ -295,5 +295,74 @@ serviceMaps:
           
           
           
+ - version: 1.0
+   name: bookings
+   description: Persists the PACC fee details into db
+   fromTopic: update-pacc-fee-details-topic
+   isTransaction: true
+   queryMaps:
+       
+       - query: UPDATE public.bk_park_community_hall_v1 SET amount=?, booking_allowed_for=?, cgstrate=?, cleaning_charges=?, dimension_sqr_yards=?, image_path=?, isactive=?, location_change_amount=?, luxury_tax=?, name=?, normal_type=?, oldrent1=?, radius=?, refundabel_security=?, rent=?, rent_next_session=?, reviserate1=?, sccid=?, scid=?, sector=?, surcharge=?, utgstrate=?, venue_type=?, x=?, y=?, last_modified_date=?::timestamp WHERE id=?;
+         basePath: PaccFeeDetails.*
+         jsonMaps:
+             
+          - jsonPath: $.PaccFeeDetails.*.amount
+             
+          - jsonPath: $.PaccFeeDetails.*.bookingAllowedFor
+             
+          - jsonPath: $.PaccFeeDetails.*.cgstRate
+             
+          - jsonPath: $.PaccFeeDetails.*.cleaningCharges
           
+          - jsonPath: $.PaccFeeDetails.*.dimensionSqrYards 
+             
+          - jsonPath: $.PaccFeeDetails.*.imagePath
+             
+          - jsonPath: $.PaccFeeDetails.*.isActive
+          
+          - jsonPath: $.PaccFeeDetails.*.locationChangeAmount 
+             
+          - jsonPath: $.PaccFeeDetails.*.luxuryTax
+             
+          - jsonPath: $.PaccFeeDetails.*.name
+             
+          - jsonPath: $.PaccFeeDetails.*.normalType
+             
+          - jsonPath: $.PaccFeeDetails.*.oldrent1
+          
+          - jsonPath: $.PaccFeeDetails.*.radius
+          
+          - jsonPath: $.PaccFeeDetails.*.refundabelSecurity
+          
+          - jsonPath: $.PaccFeeDetails.*.rent 
+             
+          - jsonPath: $.PaccFeeDetails.*.rentNextSession
+             
+          - jsonPath: $.PaccFeeDetails.*.reviserate1
+          
+          - jsonPath: $.PaccFeeDetails.*.sccid
+             
+          - jsonPath: $.PaccFeeDetails.*.scid
+             
+          - jsonPath: $.PaccFeeDetails.*.sector
+          
+          - jsonPath: $.PaccFeeDetails.*.surcharge
+          
+          - jsonPath: $.PaccFeeDetails.*.utgstRate
+          
+          - jsonPath: $.PaccFeeDetails.*.venueType 
+             
+          - jsonPath: $.PaccFeeDetails.*.x
+             
+          - jsonPath: $.PaccFeeDetails.*.y
+          
+          - jsonPath: $.PaccFeeDetails.*.lastModifiedDate
+          
+          - jsonPath: $.PaccFeeDetails.*.id 
+          
+          
+          
+          
+          
+           
            
