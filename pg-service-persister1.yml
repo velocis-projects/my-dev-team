@@ -1,7 +1,7 @@
 serviceMaps:
   serviceName: PaymentGateway
   mappings:
-    - version: 1
+    - version: 1.0
       name: pg-service
       description: Persists transactions
       fromTopic: pgs-save-pg-txns
@@ -47,7 +47,7 @@ serviceMaps:
             - jsonPath: $.Transaction.auditDetails.createdTime
             - jsonPath: $.Transaction.auditDetails.lastModifiedBy
             - jsonPath: $.Transaction.auditDetails.lastModifiedTime
-    - version: 1
+    - version: 1.0
       name: pg-service
       description: Persists transaction requests / response to and from gateways
       fromTopic: pgs-save-pg-txns-dump
@@ -68,7 +68,7 @@ serviceMaps:
             - jsonPath: $.TransactionDump.auditDetails.createdTime
             - jsonPath: $.TransactionDump.auditDetails.lastModifiedBy
             - jsonPath: $.TransactionDump.auditDetails.lastModifiedTime
-    - version: 1
+    - version: 1.0
       description: Update transaction
       fromTopic: pgs-update-pg-txns
       isTransaction: true
@@ -91,12 +91,12 @@ serviceMaps:
             - jsonPath: $.Transaction.auditDetails.lastModifiedTime
             - jsonPath: $.Transaction.txnId
             - jsonPath: $.Transaction.tenantId
-    - version: 1
+    - version: 1.0
       description: Update transaction dump
       fromTopic: pgs-update-pg-txns-dump
       isTransaction: true
       queryMaps:
-        - query: >-
+        - query:
             UPDATE eg_pg_transactions_dump SET txn_response=?,
             last_modified_by=?, last_modified_time=? where txn_id=? ;
           basePath: TransactionDump
@@ -107,7 +107,7 @@ serviceMaps:
             - jsonPath: $.TransactionDump.auditDetails.lastModifiedBy
             - jsonPath: $.TransactionDump.auditDetails.lastModifiedTime
             - jsonPath: $.TransactionDump.txnId
-    - version: 1
+    - version: 1.0
       name: pg-service
       description: Persists refund transactions
       fromTopic: pgs-save-refund-pg-txns
