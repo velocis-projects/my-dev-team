@@ -58,7 +58,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: INSERT INTO public.bk_osbm_fee (id, amount, construction_type, duration_in_months, residential_commercial, storage, village_city, created_date, last_modified_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?::timestamp, ?::timestamp);
+       - query: INSERT INTO public.bk_osbm_fee (id, amount, construction_type, duration_in_months, residential_commercial, storage, village_city, created_date, last_modified_date, from_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?::timestamp, ?::timestamp, ?::timestamp);
          basePath: OsbmFeeDetails.*
          jsonMaps:
          
@@ -79,6 +79,8 @@ serviceMaps:
           - jsonPath: $.OsbmFeeDetails.*.createdDate
           
           - jsonPath: $.OsbmFeeDetails.*.lastModifiedDate
+          
+          - jsonPath: $.OsbmFeeDetails.*.fromDate
              
           
           
@@ -91,7 +93,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: UPDATE public.bk_osbm_fee SET amount=?, construction_type=?, duration_in_months=?, residential_commercial=?, storage=?, village_city=?, last_modified_date=?::timestamp WHERE id=?;
+       - query: UPDATE public.bk_osbm_fee SET amount=?, construction_type=?, duration_in_months=?, residential_commercial=?, storage=?, village_city=?, last_modified_date=?::timestamp, to_date=?::timestamp WHERE id=?;
          basePath: OsbmFeeDetails.*
          jsonMaps:
              
@@ -109,7 +111,10 @@ serviceMaps:
           
           - jsonPath: $.OsbmFeeDetails.*.lastModifiedDate
           
-          - jsonPath: $.OsbmFeeDetails.*.id 
+          - jsonPath: $.OsbmFeeDetails.*.toDate
+          
+          - jsonPath: $.OsbmFeeDetails.*.id
+ 
           
           
           
@@ -121,7 +126,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: INSERT INTO public.bk_osujm_fee (id, area_from, area_to, rate_per_sqr_feet_per_day, sector, slab, created_date, last_modified_date) VALUES(?, ?, ?, ?, ?, ?, ?::timestamp, ?::timestamp);
+       - query: INSERT INTO public.bk_osujm_fee (id, area_from, area_to, rate_per_sqr_feet_per_day, sector, slab, created_date, last_modified_date, from_date) VALUES(?, ?, ?, ?, ?, ?, ?::timestamp, ?::timestamp, ?::timestamp);
          basePath: OsujmFeeDetails.*
          jsonMaps:
          
@@ -140,6 +145,8 @@ serviceMaps:
           - jsonPath: $.OsujmFeeDetails.*.createdDate
           
           - jsonPath: $.OsujmFeeDetails.*.lastModifiedDate
+          
+          - jsonPath: $.OsujmFeeDetails.*.fromDate
              
              
           
@@ -153,7 +160,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: UPDATE public.bk_osujm_fee SET area_from=?, area_to=?, rate_per_sqr_feet_per_day=?, sector=?, slab=?, last_modified_date=?::timestamp WHERE id=?;
+       - query: UPDATE public.bk_osujm_fee SET area_from=?, area_to=?, rate_per_sqr_feet_per_day=?, sector=?, slab=?, last_modified_date=?::timestamp, to_date=?::timestamp WHERE id=?;
          basePath: OsujmFeeDetails.*
          jsonMaps:
              
@@ -169,6 +176,8 @@ serviceMaps:
           
           - jsonPath: $.OsujmFeeDetails.*.lastModifiedDate
           
+          - jsonPath: $.OsujmFeeDetails.*.toDate
+          
           - jsonPath: $.OsujmFeeDetails.*.id 
                                                        
                                                        
@@ -181,7 +190,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: INSERT INTO public.bk_commercial_ground_fee (id, booking_venue, category, locality, rate_per_day, created_date, last_modified_date) VALUES(?, ?, ?, ?, ?, ?::timestamp, ?::timestamp);
+       - query: INSERT INTO public.bk_commercial_ground_fee (id, booking_venue, category, locality, rate_per_day, created_date, last_modified_date, from_date) VALUES(?, ?, ?, ?, ?, ?::timestamp, ?::timestamp, ?::timestamp);
          basePath: GfcpFeeDetails.*
          jsonMaps:
          
@@ -198,6 +207,8 @@ serviceMaps:
           - jsonPath: $.GfcpFeeDetails.*.createdDate
           
           - jsonPath: $.GfcpFeeDetails.*.lastModifiedDate
+          
+          - jsonPath: $.GfcpFeeDetails.*.fromDate
              
              
           
@@ -211,7 +222,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: UPDATE public.bk_commercial_ground_fee SET booking_venue=?, category=?, locality=?, rate_per_day=?, last_modified_date=?::timestamp WHERE id=?;
+       - query: UPDATE public.bk_commercial_ground_fee SET booking_venue=?, category=?, locality=?, rate_per_day=?, last_modified_date=?::timestamp, to_date=?::timestamp WHERE id=?;
          basePath: GfcpFeeDetails.*
          jsonMaps:
              
@@ -225,6 +236,8 @@ serviceMaps:
           
           - jsonPath: $.OsujmFeeDetails.*.lastModifiedDate
           
+          - jsonPath: $.OsujmFeeDetails.*.toDate
+          
           - jsonPath: $.OsujmFeeDetails.*.id 
           
           
@@ -236,7 +249,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: INSERT INTO public.bk_park_community_hall_v1 (id, amount, booking_allowed_for, cgstrate, cleaning_charges, dimension_sqr_yards, image_path, isactive, location_change_amount, luxury_tax, name, normal_type, oldrent1, radius, refundabel_security, rent, rent_next_session, reviserate1, sccid, scid, sector, surcharge, utgstrate, venue_type, x, y, created_date, last_modified_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?::timestamp, ?::timestamp);
+       - query: INSERT INTO public.bk_park_community_hall_v1 (id, amount, booking_allowed_for, cgstrate, cleaning_charges, dimension_sqr_yards, image_path, isactive, location_change_amount, luxury_tax, name, normal_type, oldrent1, radius, refundabel_security, rent, rent_next_session, reviserate1, sccid, scid, sector, surcharge, utgstrate, venue_type, x, y, created_date, last_modified_date, from_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?::timestamp, ?::timestamp, ?::timestamp);
          basePath: PaccFeeDetails.*
          jsonMaps:
          
@@ -296,6 +309,8 @@ serviceMaps:
           
           - jsonPath: $.PaccFeeDetails.*.lastModifiedDate
           
+          - jsonPath: $.PaccFeeDetails.*.fromDate
+          
           
           
           
@@ -306,7 +321,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: UPDATE public.bk_park_community_hall_v1 SET amount=?, booking_allowed_for=?, cgstrate=?, cleaning_charges=?, dimension_sqr_yards=?, image_path=?, isactive=?, location_change_amount=?, luxury_tax=?, name=?, normal_type=?, oldrent1=?, radius=?, refundabel_security=?, rent=?, rent_next_session=?, reviserate1=?, sccid=?, scid=?, sector=?, surcharge=?, utgstrate=?, venue_type=?, x=?, y=?, last_modified_date=?::timestamp WHERE id=?;
+       - query: UPDATE public.bk_park_community_hall_v1 SET amount=?, booking_allowed_for=?, cgstrate=?, cleaning_charges=?, dimension_sqr_yards=?, image_path=?, isactive=?, location_change_amount=?, luxury_tax=?, name=?, normal_type=?, oldrent1=?, radius=?, refundabel_security=?, rent=?, rent_next_session=?, reviserate1=?, sccid=?, scid=?, sector=?, surcharge=?, utgstrate=?, venue_type=?, x=?, y=?, last_modified_date=?::timestamp, to_date=?::timestamp WHERE id=?;
          basePath: PaccFeeDetails.*
          jsonMaps:
              
@@ -361,6 +376,8 @@ serviceMaps:
           - jsonPath: $.PaccFeeDetails.*.y
           
           - jsonPath: $.PaccFeeDetails.*.lastModifiedDate
+          
+          - jsonPath: $.PaccFeeDetails.*.toDate
           
           - jsonPath: $.PaccFeeDetails.*.id 
           
