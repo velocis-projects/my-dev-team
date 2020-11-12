@@ -190,7 +190,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: INSERT INTO public.bk_commercial_ground_fee (id, booking_venue, category, locality, rate_per_day, created_date, last_modified_date, from_date) VALUES(?, ?, ?, ?, ?, ?::timestamp, ?::timestamp, ?::timestamp);
+       - query: INSERT INTO public.bk_commercial_ground_fee (id, booking_venue, category, rate_per_day, created_date, last_modified_date, from_date) VALUES(?, ?, ?, ?, ?::timestamp, ?::timestamp, ?::timestamp);
          basePath: GfcpFeeDetails.*
          jsonMaps:
          
@@ -199,8 +199,6 @@ serviceMaps:
           - jsonPath: $.GfcpFeeDetails.*.bookingVenue
              
           - jsonPath: $.GfcpFeeDetails.*.category
-             
-          - jsonPath: $.GfcpFeeDetails.*.locality
              
           - jsonPath: $.GfcpFeeDetails.*.ratePerDay
           
@@ -222,15 +220,13 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: UPDATE public.bk_commercial_ground_fee SET booking_venue=?, category=?, locality=?, rate_per_day=?, last_modified_date=?::timestamp, to_date=?::timestamp WHERE id=?;
+       - query: UPDATE public.bk_commercial_ground_fee SET booking_venue=?, category=?, rate_per_day=?, last_modified_date=?::timestamp, to_date=?::timestamp WHERE id=?;
          basePath: GfcpFeeDetails.*
          jsonMaps:
              
           - jsonPath: $.GfcpFeeDetails.*.bookingVenue
              
           - jsonPath: $.GfcpFeeDetails.*.category
-             
-          - jsonPath: $.GfcpFeeDetails.*.locality
              
           - jsonPath: $.GfcpFeeDetails.*.ratePerDay      
           
