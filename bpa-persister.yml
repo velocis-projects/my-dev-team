@@ -7,7 +7,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: INSERT INTO eg_bpa_buildingplan(id, applicationNo, landId, accountId, edcrNumber, tenantId, status, approvalDate, businessService, additionalDetails, createdBy, lastmodifiedBy, createdTime, lastmodifiedTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); 
+       - query: INSERT INTO eg_bpa_buildingplan(id, applicationNo, landId, accountId, edcrNumber, tenantId, status, approvalDate, businessService, additionalDetails, createdBy, lastmodifiedBy, createdTime, lastmodifiedTime,additionalDetails1) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?); 
          basePath: BPA
          jsonMaps:
           - jsonPath: $.BPA.id
@@ -40,6 +40,9 @@ serviceMaps:
 
           - jsonPath: $.BPA.auditDetails.lastModifiedTime
 
+          - jsonPath: $.BPA.additionalDetails1
+            type: JSON
+            dbType: JSONB
 
        - query: INSERT INTO eg_bpa_document( id, documenttype, fileStoreId, buildingplanid, documentuid, additionalDetails, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
          basePath: BPA.documents.*
@@ -83,7 +86,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: UPDATE eg_bpa_buildingplan SET applicationno=?, approvalNo=?, applicationDate=?, status=?, additionaldetails=?, lastmodifiedby=?, lastmodifiedtime=?, approvalDate=? WHERE id=?;
+       - query: UPDATE eg_bpa_buildingplan SET applicationno=?, approvalNo=?, applicationDate=?, status=?, additionaldetails=?, lastmodifiedby=?, lastmodifiedtime=?, approvalDate=?, additionaldetails1=? WHERE id=?;
          basePath: BPA
          jsonMaps:
           - jsonPath: $.BPA.applicationNo
@@ -105,6 +108,10 @@ serviceMaps:
           - jsonPath: $.BPA.approvalDate
 
           - jsonPath: $.BPA.id
+          
+          - jsonPath: $.BPA.additionalDetails1
+            type: JSON
+            dbType: JSONB
 
 
        - query: INSERT INTO eg_bpa_auditdetails SELECT * FROM eg_bpa_buildingplan WHERE id =?;
