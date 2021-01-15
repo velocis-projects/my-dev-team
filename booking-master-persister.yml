@@ -379,7 +379,70 @@ serviceMaps:
           
           
           
+ - version: 1.0
+   description: Persists the Community Center Room fee details into db
+   fromTopic: save-community-center-room-fee-details-topic
+   isTransaction: true
+   queryMaps:
+
+       - query: INSERT INTO public.bk_room_master (id, total_number_of_rooms, type_of_room, rent_for_one_day, rent_for_3_hrs, rent_for_6_hrs, rent_for_9_hrs, sector_name, created_date, last_modified_date, from_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?::timestamp, ?::timestamp, ?::timestamp);
+         basePath: CommunityCenterRoomFeeDetails.*
+         jsonMaps:
+         
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.id 
+             
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.totalNumberOfRooms
+             
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.typeOfRoom
+             
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.rentForOneDay
+             
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.rentFor3Hrs
+          
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.rentFor6Hrs 
+             
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.rentFor9Hrs
+             
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.sector
+          
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.createdDate
+          
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.lastModifiedDate
+          
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.fromDate
           
           
-           
-           
+          
+          
+ - version: 1.0
+   name: bookings
+   description: Persists the Cmmunity Center Room fee details into db
+   fromTopic: update-community-center-room-fee-details-topic
+   isTransaction: true
+   queryMaps:
+       
+       - query: UPDATE public.bk_room_master SET total_number_of_rooms=?, type_of_room=?, rent_for_one_day=?, rent_for_3_hrs=?, rent_for_6_hrs=?, rent_for_9_hrs=?, sector_name=?, last_modified_date=?::timestamp, to_date=?::timestamp WHERE id=?;
+         basePath: CommunityCenterRoomFeeDetails.*
+         jsonMaps:
+             
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.totalNumberOfRooms
+             
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.typeOfRoom
+             
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.rentForOneDay
+             
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.rentFor3Hrs
+          
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.rentFor6Hrs 
+             
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.rentFor9Hrs
+             
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.sector
+          
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.lastModifiedDate
+          
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.toDate
+          
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.id 
+                    
+          
