@@ -466,4 +466,49 @@ serviceMaps:
              - jsonPath: $.NewLocationDetails.*.remarks
              
              - jsonPath: $.NewLocationDetails.*.applicationNumber
-                                            
+             
+             
+             
+ - version: 1.0
+   name: bookings
+   description: Persists the Commercial Ground Dates to be locked
+   fromTopic: save-commercial-ground-lock-dates
+   isTransaction: true
+   queryMaps:
+       
+       - query: INSERT INTO public.bk_commercial_ground_availability_lock (id, booking_venue, from_date, islocked, to_date) VALUES(?, ?, ?::date, ?,  ?::date);
+         basePath: commercialGrndAvailabilityLock.*
+         jsonMaps:
+
+             - jsonPath: $.commercialGrndAvailabilityLock.*.id
+             
+             - jsonPath: $.commercialGrndAvailabilityLock.*.bookingVenue
+             
+             - jsonPath: $.commercialGrndAvailabilityLock.*.fromDate
+             
+             - jsonPath: $.commercialGrndAvailabilityLock.*.isLocked
+             
+             - jsonPath: $.commercialGrndAvailabilityLock.*.toDate
+             
+             
+             
+ - version: 1.0
+   name: bookings
+   description: Persists the Commercial Ground Dates to be locked
+   fromTopic: update-commercial-ground-lock-dates
+   isTransaction: true
+   queryMaps:
+       
+       - query: UPDATE public.bk_commercial_ground_availability_lock SET booking_venue=?, from_date=?::date, islocked=?, to_date=?::date WHERE id=?;
+         basePath: commercialGrndAvailabilityLock.*
+         jsonMaps:
+             
+             - jsonPath: $.commercialGrndAvailabilityLock.*.bookingVenue
+             
+             - jsonPath: $.commercialGrndAvailabilityLock.*.fromDate
+             
+             - jsonPath: $.commercialGrndAvailabilityLock.*.isLocked
+             
+             - jsonPath: $.commercialGrndAvailabilityLock.*.toDate             
+      
+             - jsonPath: $.commercialGrndAvailabilityLock.*.id
