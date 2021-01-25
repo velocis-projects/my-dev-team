@@ -355,6 +355,16 @@ serviceMaps:
            - jsonPath: $.Booking.*.financialYear
            
            - jsonPath: $.Booking.*.bkRemarks
+           
+           - jsonPath: $.Booking.*.bkBankAccountNumber
+          
+           - jsonPath: $.Booking.*.bkBankName
+          
+           - jsonPath: $.Booking.*.bkIfscCode
+          
+           - jsonPath: $.Booking.*.bkAccountType
+          
+           - jsonPath: $.Booking.*.bkBankAccountHolder
          
            - jsonPath: $.Booking.*.bkApplicationNumber       
            
