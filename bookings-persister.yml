@@ -530,12 +530,12 @@ serviceMaps:
              
  - version: 1.0
    name: bookings
-   description: Persists the Room For Community
+   description: Persists the Room Details For Community Booking
    fromTopic: save-room-details
    isTransaction: true
    queryMaps:
        
-       - query: INSERT INTO public.bk_rooms_model (room_application_number, "action", community_application_number, remarks, rent_for, room_application_status, room_business_service, total_no_of_rooms, type_of_room) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);
+       - query: INSERT INTO public.bk_rooms_model (room_application_number, "action", community_application_number, remarks, room_application_status, room_business_service, total_no_of_rooms, type_of_room) VALUES(?, ?, ?, ?, ?, ?, ?, ?);
          basePath: Booking.*.roomsModel.*
          jsonMaps:
           - jsonPath: $.Booking.roomsModel.*.roomApplicationNumber
@@ -546,7 +546,34 @@ serviceMaps:
           
           - jsonPath: $.Booking.roomsModel.*.remarks
           
-          - jsonPath: $.Booking.roomsModel.*.rentFor
+          - jsonPath: $.Booking.roomsModel.*.roomApplicationStatus
+          
+          - jsonPath: $.Booking.roomsModel.*.roomBusinessService
+          
+          - jsonPath: $.Booking.roomsModel.*.totalNoOfRooms
+          
+          - jsonPath: $.Booking.roomsModel.*.typeOfRoom
+             
+
+
+
+
+ - version: 1.0
+   name: bookings
+   description: Persists the Room Details For Community Booking
+   fromTopic: update-room-details
+   isTransaction: true
+   queryMaps:
+       
+       - query: UPDATE public.bk_rooms_model SET "action"=?, community_application_number=?, remarks=?, room_application_status=?, room_business_service=?, total_no_of_rooms=?, type_of_room=? WHERE room_application_number=?;
+
+         basePath: Booking.*.roomsModel.*
+         jsonMaps:
+          - jsonPath: $.Booking.roomsModel.*.action
+
+          - jsonPath: $.Booking.roomsModel.*.communityApplicationNumber
+          
+          - jsonPath: $.Booking.roomsModel.*.remarks
           
           - jsonPath: $.Booking.roomsModel.*.roomApplicationStatus
           
@@ -556,4 +583,5 @@ serviceMaps:
           
           - jsonPath: $.Booking.roomsModel.*.typeOfRoom
              
+          - jsonPath: $.Booking.roomsModel.*.roomApplicationNumber   
              
