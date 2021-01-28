@@ -191,29 +191,6 @@ serviceMaps:
           
 
 
-       - query: INSERT INTO public.bk_rooms_model (room_application_number, "action", community_application_number, remarks, rent_for, room_application_status, room_business_service, total_no_of_rooms, type_of_room) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);
-         basePath: Booking.*.roomsModel.*
-         jsonMaps:
-          - jsonPath: $.Booking.roomsModel.*.roomApplicationNumber
-
-          - jsonPath: $.Booking.roomsModel.*.action
-
-          - jsonPath: $.Booking.roomsModel.*.communityApplicationNumber
-          
-          - jsonPath: $.Booking.roomsModel.*.remarks
-          
-          - jsonPath: $.Booking.roomsModel.*.rentFor
-          
-          - jsonPath: $.Booking.roomsModel.*.roomApplicationStatus
-          
-          - jsonPath: $.Booking.roomsModel.*.roomBusinessService
-          
-          - jsonPath: $.Booking.roomsModel.*.totalNoOfRooms
-          
-          - jsonPath: $.Booking.roomsModel.*.typeOfRoom
-          
-      
-
 
 
           
@@ -549,3 +526,34 @@ serviceMaps:
              - jsonPath: $.commercialGrndAvailabilityLock.*.toDate             
       
              - jsonPath: $.commercialGrndAvailabilityLock.*.id
+             
+             
+ - version: 1.0
+   name: bookings
+   description: Persists the Room For Community
+   fromTopic: save-room-details
+   isTransaction: true
+   queryMaps:
+       
+       - query: INSERT INTO public.bk_rooms_model (room_application_number, "action", community_application_number, remarks, rent_for, room_application_status, room_business_service, total_no_of_rooms, type_of_room) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);
+         basePath: Booking.*.roomsModel.*
+         jsonMaps:
+          - jsonPath: $.Booking.roomsModel.*.roomApplicationNumber
+
+          - jsonPath: $.Booking.roomsModel.*.action
+
+          - jsonPath: $.Booking.roomsModel.*.communityApplicationNumber
+          
+          - jsonPath: $.Booking.roomsModel.*.remarks
+          
+          - jsonPath: $.Booking.roomsModel.*.rentFor
+          
+          - jsonPath: $.Booking.roomsModel.*.roomApplicationStatus
+          
+          - jsonPath: $.Booking.roomsModel.*.roomBusinessService
+          
+          - jsonPath: $.Booking.roomsModel.*.totalNoOfRooms
+          
+          - jsonPath: $.Booking.roomsModel.*.typeOfRoom
+             
+             
