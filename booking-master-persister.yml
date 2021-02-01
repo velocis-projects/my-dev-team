@@ -385,11 +385,13 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: INSERT INTO public.bk_room_master (id, total_number_of_rooms, type_of_room, rent_for_one_day, rent_for_3_hrs, rent_for_6_hrs, rent_for_9_hrs, sector_name, created_date, last_modified_date, from_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?::timestamp, ?::timestamp, ?::timestamp);
+       - query: INSERT INTO public.bk_room_master (id, community_center_name, total_number_of_rooms, type_of_room, rent_for_one_day, rent_for_3_hrs, rent_for_6_hrs, rent_for_9_hrs, sector_name, created_date, last_modified_date, from_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?::timestamp, ?::timestamp, ?::timestamp);
          basePath: CommunityCenterRoomFeeDetails.*
          jsonMaps:
          
           - jsonPath: $.CommunityCenterRoomFeeDetails.*.id 
+          
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.communityCenterName
              
           - jsonPath: $.CommunityCenterRoomFeeDetails.*.totalNumberOfRooms
              
@@ -421,10 +423,12 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: UPDATE public.bk_room_master SET total_number_of_rooms=?, type_of_room=?, rent_for_one_day=?, rent_for_3_hrs=?, rent_for_6_hrs=?, rent_for_9_hrs=?, sector_name=?, last_modified_date=?::timestamp, to_date=?::timestamp WHERE id=?;
+       - query: UPDATE public.bk_room_master SET community_center_name=?, total_number_of_rooms=?, type_of_room=?, rent_for_one_day=?, rent_for_3_hrs=?, rent_for_6_hrs=?, rent_for_9_hrs=?, sector_name=?, last_modified_date=?::timestamp, to_date=?::timestamp WHERE id=?;
          basePath: CommunityCenterRoomFeeDetails.*
          jsonMaps:
              
+          - jsonPath: $.CommunityCenterRoomFeeDetails.*.communityCenterName  
+           
           - jsonPath: $.CommunityCenterRoomFeeDetails.*.totalNumberOfRooms
              
           - jsonPath: $.CommunityCenterRoomFeeDetails.*.typeOfRoom
