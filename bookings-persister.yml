@@ -539,7 +539,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: INSERT INTO public.bk_rooms_model (room_application_number, "action", community_application_number, remarks, room_application_status, room_business_service, total_no_of_rooms, type_of_room) VALUES(?, ?, ?, ?, ?, ?, ?, ?);
+       - query: INSERT INTO public.bk_rooms_model (room_application_number, "action", community_application_number, remarks, room_application_status, room_business_service, total_no_of_rooms, type_of_room,last_modified_date, created_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?::timestamp, ?::timestamp);
          basePath: Booking.*.roomsModel.*
          jsonMaps:
           - jsonPath: $.Booking.roomsModel.*.roomApplicationNumber
@@ -557,6 +557,10 @@ serviceMaps:
           - jsonPath: $.Booking.roomsModel.*.totalNoOfRooms
           
           - jsonPath: $.Booking.roomsModel.*.typeOfRoom
+          
+          - jsonPath: $.Booking.roomsModel.*.lastModifiedDate
+          
+          - jsonPath: $.Booking.roomsModel.*.createdDate
              
 
 
@@ -569,7 +573,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: UPDATE public.bk_rooms_model SET "action"=?, community_application_number=?, remarks=?, room_application_status=?, room_business_service=?, total_no_of_rooms=?, type_of_room=? WHERE room_application_number=?;
+       - query: UPDATE public.bk_rooms_model SET "action"=?, community_application_number=?, remarks=?, room_application_status=?, room_business_service=?, total_no_of_rooms=?, type_of_room=?, last_modified_date=?::timestamp WHERE room_application_number=?;
 
          basePath: Booking.*.roomsModel.*
          jsonMaps:
@@ -586,6 +590,8 @@ serviceMaps:
           - jsonPath: $.Booking.roomsModel.*.totalNoOfRooms
           
           - jsonPath: $.Booking.roomsModel.*.typeOfRoom
+          
+          - jsonPath: $.Booking.roomsModel.*.lastModifiedDate
              
           - jsonPath: $.Booking.roomsModel.*.roomApplicationNumber   
              
