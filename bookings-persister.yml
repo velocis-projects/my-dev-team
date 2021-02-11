@@ -539,7 +539,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: INSERT INTO public.bk_rooms_model (room_application_number, "action", community_application_number, remarks, room_application_status, room_business_service, total_no_of_rooms, type_of_room,last_modified_date, created_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?::date, ?::date);
+       - query: INSERT INTO public.bk_rooms_model (room_application_number, "action", community_application_number, remarks, room_application_status, room_business_service, total_no_of_rooms, type_of_room,last_modified_date, created_date, from_date, to_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?::date, ?::date, ?::date, ?::date);
          basePath: Booking.*.roomsModel.*
          jsonMaps:
           - jsonPath: $.Booking.roomsModel.*.roomApplicationNumber
@@ -561,6 +561,10 @@ serviceMaps:
           - jsonPath: $.Booking.roomsModel.*.lastModifiedDate
           
           - jsonPath: $.Booking.roomsModel.*.createdDate
+          
+          - jsonPath: $.Booking.roomsModel.*.fromDate
+          
+          - jsonPath: $.Booking.roomsModel.*.toDate
              
 
 
@@ -573,7 +577,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: UPDATE public.bk_rooms_model SET "action"=?, community_application_number=?, remarks=?, room_application_status=?, room_business_service=?, total_no_of_rooms=?, type_of_room=?, last_modified_date=?::date WHERE room_application_number=?;
+       - query: UPDATE public.bk_rooms_model SET "action"=?, community_application_number=?, remarks=?, room_application_status=?, room_business_service=?, total_no_of_rooms=?, type_of_room=?, last_modified_date=?::date, from_date=?::date,to_date=?::date WHERE room_application_number=?;
 
          basePath: Booking.*.roomsModel.*
          jsonMaps:
@@ -591,7 +595,9 @@ serviceMaps:
           
           - jsonPath: $.Booking.roomsModel.*.typeOfRoom
           
-          - jsonPath: $.Booking.roomsModel.*.lastModifiedDate
+          - jsonPath: $.Booking.roomsModel.*.fromDate
+          
+          - jsonPath: $.Booking.roomsModel.*.toDate     
              
           - jsonPath: $.Booking.roomsModel.*.roomApplicationNumber   
              
