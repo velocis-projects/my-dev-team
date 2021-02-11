@@ -577,7 +577,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: UPDATE public.bk_rooms_model SET "action"=?, community_application_number=?, remarks=?, room_application_status=?, room_business_service=?, total_no_of_rooms=?, type_of_room=?, last_modified_date=?::date, from_date=?::date,to_date=?::date WHERE room_application_number=?;
+       - query: UPDATE public.bk_rooms_model SET "action"=?, community_application_number=?, remarks=?, room_application_status=?, room_business_service=?, total_no_of_rooms=?, type_of_room=?, last_modified_date=?::date, from_date=?::date, to_date=?::date WHERE room_application_number=?;
 
          basePath: Booking.*.roomsModel.*
          jsonMaps:
