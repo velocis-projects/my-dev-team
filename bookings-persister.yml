@@ -595,6 +595,8 @@ serviceMaps:
           
           - jsonPath: $.Booking.roomsModel.*.typeOfRoom
           
+          - jsonPath: $.Booking.roomsModel.*.lastModifiedDate
+          
           - jsonPath: $.Booking.roomsModel.*.fromDate
           
           - jsonPath: $.Booking.roomsModel.*.toDate     
