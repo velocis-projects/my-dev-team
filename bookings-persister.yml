@@ -603,3 +603,4 @@ serviceMaps:
              
           - jsonPath: $.Booking.roomsModel.*.roomApplicationNumber   
              
+             
