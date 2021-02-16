@@ -181,6 +181,7 @@ serviceMaps:
           
           
           
+          
        - query: INSERT INTO public.bk_timeslots (id, slot, slot2, application_number) VALUES(?, ?, ?, ?);
          basePath: Booking.*.timeslots.*
          jsonMaps:
