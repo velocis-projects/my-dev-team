@@ -511,7 +511,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: INSERT INTO public.bk_commercial_ground_availability_lock (id, booking_venue, from_date, is_locked, to_date, created_date, last_modified_date, venue_type, reason_for_hold) VALUES(?, ?, ?::date, ?,  ?::date, ?, ?, ?, ?);
+       - query: INSERT INTO public.bk_commercial_ground_availability_lock (id, booking_venue, from_date, is_locked, to_date, created_date, last_modified_date, venue_type, reason_for_hold, sector) VALUES(?, ?, ?::date, ?,  ?::date, ?, ?, ?, ?, ?);
          basePath: commercialGrndAvailabilityLock.*
          jsonMaps:
 
