@@ -574,7 +574,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
        
-       - query: INSERT INTO public.bk_rooms_model (id, room_application_number, "action", community_application_number, remarks, room_application_status, room_business_service, total_no_of_rooms, type_of_room,last_modified_date, created_date, from_date, to_date, discount, facilation_charge, room_payment_status) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?::date, ?::date, ?::date, ?::date, ?, ?, ?);
+       - query: INSERT INTO public.bk_rooms_model (id, room_application_number, "action", community_application_number, remarks, room_application_status, room_business_service, total_no_of_rooms, type_of_room,last_modified_date, created_date, from_date, to_date, discount, facilation_charge, room_payment_status, room_created_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?::date, ?::date, ?::date, ?::date, ?, ?, ?, ?);
          basePath: Booking.*.roomsModel.*
          jsonMaps:
           - jsonPath: $.Booking.roomsModel.*.id
@@ -608,6 +608,8 @@ serviceMaps:
           - jsonPath: $.Booking.roomsModel.*.facilationCharge
           
           - jsonPath: $.Booking.roomsModel.*.roomPaymentStatus
+          
+          - jsonPath: $.Booking.roomsModel.*.roomCreatedDate
           
           
              
