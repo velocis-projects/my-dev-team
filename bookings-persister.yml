@@ -679,4 +679,29 @@ serviceMaps:
           - jsonPath: $.Booking.roomsModel.*.roomStatus
 
           - jsonPath: $.Booking.roomsModel.*.communityApplicationNumber
+          
+          
+          
+          
+          
+          
+          
+ - version: 1.0
+   description: Persists the booking details into db
+   fromTopic: save-booking-card-details
+   isTransaction: true
+   queryMaps:  
+   
+       - query: UPDATE public.bk_bookings SET last_modified_date=?, card_number=?, transaction_number=? WHERE bk_application_number=?; 
+         basePath: Booking.*
+         jsonMaps:
+           
+           - jsonPath: $.Booking.*.lastModifiedDate
+           
+           - jsonPath: $.Booking.*.cardNumber
+           
+           - jsonPath: $.Booking.*.transactionNumber
+         
+           - jsonPath: $.Booking.*.bkApplicationNumber          
+          
                        
