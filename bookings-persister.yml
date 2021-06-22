@@ -762,7 +762,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:  
    
-       - query: UPDATE public.bk_rooms_model SET last_modified_date=?, card_number=?, transaction_number=?, payment_collection_type=?, paid_by=?, payer_name=?, payer_mobile_number=?, cheque_number=?, payment_date=?, ifsc_code=?, bank_name=?, bank_branch=? WHERE room_application_number=?; 
+       - query: UPDATE public.bk_rooms_model SET last_modified_date=?::date, card_number=?, transaction_number=?, payment_collection_type=?, paid_by=?, payer_name=?, payer_mobile_number=?, cheque_number=?, payment_date=?, ifsc_code=?, bank_name=?, bank_branch=? WHERE room_application_number=?; 
          basePath: Booking.*.roomsModel.*
          jsonMaps:
            
