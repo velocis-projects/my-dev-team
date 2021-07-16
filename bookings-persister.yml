@@ -186,7 +186,7 @@ serviceMaps:
           - jsonPath: $.Booking.*.bkNomineeName
           
           - jsonPath: $.Booking.*.refundableSecurityMoney
-		  
+
           - jsonPath: $.Booking.*.quantity
           
           
