@@ -383,11 +383,11 @@ serviceMaps:
            - jsonPath: $.Booking.*.lastModifiedDate
            
            - jsonPath: $.Booking.*.bkNomineeName
-           
+
            - jsonPath: $.Booking.*.refundableSecurityMoney
-		   
+
            - jsonPath: $.Booking.*.quantity
-		   
+
            - jsonPath: $.Booking.*.bkApplicationNumber
        
            
